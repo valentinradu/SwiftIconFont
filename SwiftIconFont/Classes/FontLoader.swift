@@ -11,18 +11,47 @@ import Foundation
 import CoreText
 
 class FontLoader: NSObject {
+    class func loadWithFont(_ font: Fonts) {
+        let bundle = Bundle(for: FontLoader.self)
+        var fontURL = URL(string: "")
+        var error: Unmanaged<CFError>?
+        
+        fontURL = NSURL(fileURLWithPath: bundle.path(forResource: font.file, ofType: "ttf")!) as URL
+        
+        guard let unwrappedFontURL = fontURL,
+            let data = try? Data(contentsOf: unwrappedFontURL),
+            let provider = CGDataProvider(data: data as CFData) else {
+                return
+        }
+        
+        let font = CGFont.init(provider)
+
+        guard let unwrappedFont = font,
+            !CTFontManagerRegisterGraphicsFont(unwrappedFont, &error),
+            let unwrappedError = error,
+            let nsError = (unwrappedError.takeUnretainedValue() as AnyObject) as? NSError else {
+                
+                return
+        }
+        
+        let errorDescription: CFString = CFErrorCopyDescription(unwrappedError.takeUnretainedValue())
+        
+        NSException(name: NSExceptionName.internalInconsistencyException,
+                    reason: errorDescription as String,
+                    userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+    }
+    
     class func loadFont(_ fontName: String) {
         let bundle = Bundle(for: FontLoader.self)
         let paths = bundle.paths(forResourcesOfType: "ttf", inDirectory: nil)
         var fontURL = URL(string: "")
         var error: Unmanaged<CFError>?
-
+        
         paths.forEach {
-            guard let filename = NSURL(fileURLWithPath: $0).lastPathComponent,
-                filename.lowercased().range(of: fontName.lowercased()) != nil else {
+            guard let filename = NSURL(fileURLWithPath: $0).lastPathComponent, filename.lowercased().range(of: fontName.lowercased()) != nil else {
                     return
             }
-
+            
             fontURL = NSURL(fileURLWithPath: $0) as URL
         }
 
@@ -32,9 +61,9 @@ class FontLoader: NSObject {
 
                 return
         }
-
+        
         let font = CGFont.init(provider)
-
+    
         guard let unwrappedFont = font,
             !CTFontManagerRegisterGraphicsFont(unwrappedFont, &error),
             let unwrappedError = error,
@@ -53,11 +82,11 @@ class FontLoader: NSObject {
 
 public extension UIFont {
     static func icon(from font: Fonts, ofSize size: CGFloat) -> UIFont {
-        let fontName = font.rawValue
-        if (UIFont.fontNames(forFamilyName: font.fontName).count == 0)
+        if (UIFont.fontNames(forFamilyName: font.name).count == 0)
         {
-            FontLoader.loadFont(fontName)
+            FontLoader.loadWithFont(font)
         }
-        return UIFont(name: font.rawValue, size: size)!
+        let font = UIFont(name: font.rawValue, size: size)!
+        return font
     }
 }

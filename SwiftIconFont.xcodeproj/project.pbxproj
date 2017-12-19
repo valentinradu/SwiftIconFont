@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1948F81FE928A600422DB2 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA1948F71FE928A600422DB2 /* fa-regular-400.ttf */; };
 		DA223AA91F160FAC005915D0 /* SwiftIconFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */; };
+		DA3C9CB11FE8FE81000E2497 /* FontAwesomeFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C9CB01FE8FE81000E2497 /* FontAwesomeFive.swift */; };
 		DA639C421F62B959004810A6 /* SwiftIconStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA639C411F62B959004810A6 /* SwiftIconStepper.swift */; };
 		DA8D9D151D345A3800F5E693 /* SwiftIconFont.h in Headers */ = {isa = PBXBuildFile; fileRef = DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA8D9D1C1D345A3800F5E693 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8D9D111D345A3800F5E693 /* SwiftIconFont.framework */; };
@@ -57,7 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1948F71FE928A600422DB2 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
 		DA223AA81F160FAC005915D0 /* SwiftIconFontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconFontView.swift; sourceTree = "<group>"; };
+		DA3C9CB01FE8FE81000E2497 /* FontAwesomeFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeFive.swift; sourceTree = "<group>"; };
 		DA639C411F62B959004810A6 /* SwiftIconStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIconStepper.swift; sourceTree = "<group>"; };
 		DA8D9D111D345A3800F5E693 /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D9D141D345A3800F5E693 /* SwiftIconFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftIconFont.h; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				DA8D9D2C1D345A4500F5E693 /* FontAwesome.ttf */,
+				DA1948F71FE928A600422DB2 /* fa-regular-400.ttf */,
 				DA8D9D2D1D345A4500F5E693 /* Ionicons.ttf */,
 				DA8D9D2E1D345A4500F5E693 /* map-icons.ttf */,
 				DA8D9D2F1D345A4500F5E693 /* MaterialIcons-Regular.ttf */,
@@ -224,6 +229,7 @@
 				DA8D9D401D345A4900F5E693 /* MaterialIcon.swift */,
 				DA8D9D411D345A4900F5E693 /* Octicon.swift */,
 				DA8D9D491D345A4900F5E693 /* ThemifyIcon.swift */,
+				DA3C9CB01FE8FE81000E2497 /* FontAwesomeFive.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				DA8D9D341D345A4500F5E693 /* Ionicons.ttf in Resources */,
 				DA8D9D351D345A4500F5E693 /* map-icons.ttf in Resources */,
 				DA8D9D391D345A4500F5E693 /* themify.ttf in Resources */,
+				DA1948F81FE928A600422DB2 /* fa-regular-400.ttf in Resources */,
 				DA8D9D331D345A4500F5E693 /* FontAwesome.ttf in Resources */,
 				DA8D9D361D345A4500F5E693 /* MaterialIcons-Regular.ttf in Resources */,
 			);
@@ -355,6 +362,7 @@
 				DA8D9D581D345A4900F5E693 /* ThemifyIcon.swift in Sources */,
 				DAD008341F90D2FC00D4FC34 /* SwiftIconFont+String.swift in Sources */,
 				DA8D9D551D345A4900F5E693 /* SwiftIconTabBarItem.swift in Sources */,
+				DA3C9CB11FE8FE81000E2497 /* FontAwesomeFive.swift in Sources */,
 				DA8D9D561D345A4900F5E693 /* SwiftIconTextField.swift in Sources */,
 				DAD008211F90D16500D4FC34 /* SwiftIconFont+UIImage.swift in Sources */,
 				DA8D9D4B1D345A4900F5E693 /* FontLoader.swift in Sources */,

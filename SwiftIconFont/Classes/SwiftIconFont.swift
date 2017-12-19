@@ -24,8 +24,9 @@ public enum Fonts: String {
     case Themify = "themify"
     case MapIcon = "map-icons"
     case MaterialIcon = "MaterialIcons-Regular"
+    case FontAwesomeFive = "Font Awesome 5 Free"
     
-    var fontName: String {
+    var name: String {
         switch self {
         case .FontAwesome:
             return "FontAwesome"
@@ -41,6 +42,29 @@ public enum Fonts: String {
             return "map-icons"
         case .MaterialIcon:
             return "Material Icons"
+        case .FontAwesomeFive:
+            return "Font Awesome 5 Free"
+        }
+    }
+    
+    var file: String {
+        switch self {
+        case .FontAwesome:
+            return "FontAwesome"
+        case .Iconic:
+            return "open-iconic"
+        case .Ionicon:
+            return "Ionicons"
+        case .Octicon:
+            return "octicons"
+        case .Themify:
+            return "themify"
+        case .MapIcon:
+            return "map-icons"
+        case .MaterialIcon:
+            return "MaterialIcons-Regular"
+        case .FontAwesomeFive:
+            return "fa-regular-400"
         }
     }
     
@@ -97,6 +121,9 @@ func getAttributedString(_ text: NSString, ofSize size: CGFloat) -> NSMutableAtt
         } else if fontPrefix == "ma" {
             fontType = Fonts.MaterialIcon
             fontArr = materialIconArr
+        } else if fontPrefix == "fa5" {
+            fontType = Fonts.FontAwesomeFive
+            fontArr = fontAwesomeFiveIconArr
         }
         
         if let _ = fontArr[fontCode] {
@@ -159,6 +186,9 @@ func getAttributedStringForRuntimeReplace(_ text: NSString, ofSize size: CGFloat
                 } else if fontPrefix == "ma" {
                     fontType = Fonts.MaterialIcon
                     fontArr = materialIconArr
+                } else if fontPrefix == "fa5" {
+                    fontType = Fonts.FontAwesomeFive
+                    fontArr = fontAwesomeFiveIconArr
                 }
                 
                 
@@ -234,6 +264,8 @@ func GetFontTypeWithSelectedIcon(_ icon: String) -> Fonts {
             fontType = Fonts.MapIcon
         } else if fontPrefix == "ma" {
             fontType = Fonts.MaterialIcon
+        } else if fontPrefix == "fa5" {
+            fontType = Fonts.FontAwesomeFive
         }
     }
     

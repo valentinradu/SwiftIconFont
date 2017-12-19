@@ -21,18 +21,21 @@ class ViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel1.parseIcon()
-        testLabel2.font = UIFont.icon(from: .FontAwesome, ofSize: 17.0)
-        testLabel2.text = String.fontAwesomeIcon("twitter")
-        tabbarItem.badgeValue = "1"
-        //textField.runtimeParse = true
-        // Do any additional setup after loading the view, typically from a nib.
-        tabbar.delegate = self
-        tabbar.selectedItem = tabbarItem
+        testLabel2.font = UIFont.icon(from: .FontAwesomeFive, ofSize: 17.0)
+        testLabel2.font = UIFont(name: "FontAwesome5FreeRegular", size: 17.0)
+        testLabel2.text = "\u{f26e}"
+        print(testLabel2.font)
         
-        let imageView: UIImageView = UIImageView(frame: CGRect(x: 120, y: self.view.frame.size.height - 130, width: 150, height: 50))
-        imageView.setIcon(from: .Octicon, code: "logo-github", textColor: .black, backgroundColor: .clear, size: nil)
-        self.view.addSubview(imageView)
+        func printFonts() {
+            let fontFamilyNames = UIFont.familyNames
+            for familyName in fontFamilyNames {
+                print("------------------------------")
+                print("Font Family Name = [\(familyName)]")
+                let names = UIFont.fontNames(forFamilyName: familyName)
+                print("Font Names = [\(names)]")
+            }
+        }
+        printFonts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +44,7 @@ class ViewController: UIViewController, UITabBarDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        textField.resignFirstResponder()    
+        //textField.resignFirstResponder()
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
