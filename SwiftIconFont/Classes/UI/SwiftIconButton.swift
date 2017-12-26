@@ -17,11 +17,11 @@ public class SwiftIconButton: UIButton {
         }
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         self.parseIcon()
     }
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         parseIcon()
     }
