@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class SwiftIconButton: UIButton {
+public class SwiftIconButton: UIButton {
     @IBInspectable var Icon: String = "" {
         didSet {
             self.setTitle(Icon, for: .normal)
