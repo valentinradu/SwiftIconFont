@@ -34,5 +34,9 @@ class SwiftIconStepper: UIStepper {
         
     }
     
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        parseIcon()
+    }
 }
 #endif

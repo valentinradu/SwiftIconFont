@@ -70,6 +70,10 @@ class SwiftIconTextField: UITextField {
         } catch {
             // regex was bad!
         }
-        
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        parseIcon()
     }
 }

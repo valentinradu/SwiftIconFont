@@ -39,4 +39,8 @@ class SwiftIconTabBarItem: UITabBarItem {
         }
     }
 
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setIcon()
+    }
 }

@@ -38,7 +38,7 @@ import UIKit
         setupViews()
     }
     
-    
+
     func setupViews() {
         iconFont = GetFontTypeWithSelectedIcon(iconCode)
         let iconText = GetIconIndexWithSelectedIcon(iconCode)

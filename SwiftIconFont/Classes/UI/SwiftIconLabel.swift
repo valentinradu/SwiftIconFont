@@ -20,4 +20,9 @@ public class SwiftIconLabel: UILabel {
     public override func awakeFromNib() {
         self.parseIcon()
     }
+    
+    override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        parseIcon()
+    }
 }

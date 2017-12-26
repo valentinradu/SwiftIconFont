@@ -20,4 +20,9 @@ class SwiftIconBarButtonItem: UIBarButtonItem {
     fileprivate func parseIcon() {
         self.icon(from: GetFontTypeWithSelectedIcon(Icon), code: GetIconIndexWithSelectedIcon(Icon), ofSize: FontSize)
     }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        parseIcon()
+    }
 }
